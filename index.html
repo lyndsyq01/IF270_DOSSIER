@@ -1,3 +1,6 @@
+Index · HTML
+Copy
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +34,7 @@
       -webkit-font-smoothing: antialiased;
     }
     .page { max-width: 1440px; margin: 0 auto; padding: 0 var(--pad); }
-
+ 
     /* ─── NAV ───────────────────────────────────────────── */
     nav {
       display: grid;
@@ -47,7 +50,7 @@
     .nav-links { text-align: right; color: var(--muted); display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.25rem 0.75rem; }
     .nav-links a { color: inherit; text-decoration: none; }
     .nav-links a:hover { color: var(--ink); }
-
+ 
     /* ─── TABS ──────────────────────────────────────────── */
     .tab-bar {
       display: flex;
@@ -70,10 +73,10 @@
     }
     .tab-btn:hover { color: var(--ink); }
     .tab-btn.active { color: var(--ink); border-bottom-color: var(--accent); font-weight: 500; }
-
+ 
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
-
+ 
     /* ─── HERO ──────────────────────────────────────────── */
     .hero { padding: 2.5rem 0 2rem; border-bottom: 1px solid var(--border); }
     .hero h1 {
@@ -83,7 +86,7 @@
       line-height: 1.0;
       letter-spacing: -0.02em;
     }
-
+ 
     /* ─── SECTION LABEL ROW ─────────────────────────────── */
     .section-label {
       display: flex;
@@ -96,7 +99,7 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
-
+ 
     /* ─── SIDE-BY-SIDE LAYOUT ───────────────────────────── */
     /* Base: text left, image right. Even sections flip. */
     .split {
@@ -109,7 +112,7 @@
     }
     .split.flip { direction: rtl; }
     .split.flip > * { direction: ltr; }
-
+ 
     .split-text { padding: 0.5rem 0; }
     .split-text .eyebrow {
       font-size: 0.7rem;
@@ -150,7 +153,7 @@
       margin-top: 0.5rem;
       font-style: normal;
     }
-
+ 
     .split-media { position: relative; }
     .split-media img {
       width: 100%;
@@ -174,7 +177,7 @@
       font-family: var(--serif); font-size: 1rem; color: var(--muted);
       border-left: 4px solid var(--accent);
     }
-
+ 
     /* ─── MODAL ─────────────────────────────────────────── */
     .modal-overlay {
       position: fixed; inset: 0;
@@ -225,71 +228,69 @@
     .modal-text { font-size: 0.95rem; line-height: 1.8; color: rgba(248,247,243,0.7); }
     .modal-text p { margin-bottom: 1.2em; }
     .modal-divider { width: 100%; border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 1.5rem 0 0; }
-
+ 
     /* ─── INTERVIEW TAB ─────────────────────────────────── */
     .interview-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--gap);
       padding: 2rem 0 3rem;
+      align-items: start;
     }
-    /* Video column */
+    .video-sticky { position: sticky; top: 1.5rem; }
+    .audio-block { margin-bottom: 1rem; }
+    .audio-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
     .video-col h3 {
       font-family: var(--serif);
       font-size: 1.4rem;
       font-weight: 400;
       margin-bottom: 1rem;
     }
-    .video-wrap {
-      width: 100%;
-      background: #111;
-      aspect-ratio: 16/9;
-      position: relative;
-      overflow: hidden;
-    }
-    .video-wrap video {
-      width: 100%; height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-    /* Placeholder state when no video src */
-    .video-placeholder {
-      position: absolute; inset: 0;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 0.75rem;
-      color: rgba(255,255,255,0.35);
-      font-family: var(--serif);
-    }
-    .video-placeholder .play-icon {
-      width: 52px; height: 52px;
-      border: 2px solid rgba(255,255,255,0.25);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem;
-      padding-left: 4px;
-    }
-    .video-placeholder p { font-size: 0.8rem; font-family: var(--sans); letter-spacing: 0.05em; }
     .video-note {
       font-size: 0.72rem; color: var(--muted);
       margin-top: 0.6rem; font-style: italic;
     }
-
+    /* Section heads within transcript */
+    .transcript-section-head {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      padding: 2.25rem 0 0.75rem;
+      border-top: 1px solid var(--border);
+      margin-top: 0.5rem;
+    }
+    /* Table of contents */
+    .transcript-toc {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .toc-label {
+      font-size: 0.68rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+    .transcript-toc a {
+      display: block; font-size: 0.8rem;
+      color: var(--ink); text-decoration: none;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid transparent;
+      transition: color .15s, border-color .15s;
+    }
+    .transcript-toc a:hover { color: var(--accent); border-bottom-color: var(--accent); }
     /* Transcript column */
     .transcript-col { overflow-y: auto; max-height: 80vh; padding-right: 0.5rem; }
     .transcript-col::-webkit-scrollbar { width: 4px; }
     .transcript-col::-webkit-scrollbar-track { background: transparent; }
     .transcript-col::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-
-    .transcript-col h3 {
-      font-family: var(--serif);
-      font-size: 1.4rem; font-weight: 400;
-      margin-bottom: 1.25rem;
-      position: sticky; top: 0;
-      background: var(--bg);
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border);
-    }
     .qa-block { margin-bottom: 1.75rem; }
     .qa-block .speaker {
       font-size: 0.68rem;
@@ -317,7 +318,7 @@
       line-height: 1.5;
       color: var(--ink);
     }
-
+ 
     /* ─── FOOTER ────────────────────────────────────────── */
     footer {
       border-top: 1px solid var(--border);
@@ -329,7 +330,7 @@
     footer .fr { text-align: right; }
     footer a { color: inherit; text-decoration: none; }
     footer a:hover { color: var(--ink); }
-
+ 
     /* ─── Responsive ────────────────────────────────────── */
     @media (max-width: 860px) {
       :root { --pad: 1.25rem; }
@@ -337,6 +338,7 @@
       .nav-links { justify-content: flex-start; }
       .split, .interview-layout { grid-template-columns: 1fr; }
       .split.flip { direction: ltr; }
+      .video-sticky { position: static; }
       footer { grid-template-columns: 1fr; gap: 0.5rem; }
       footer .fc, footer .fr { text-align: left; }
       .transcript-col { max-height: none; }
@@ -344,7 +346,7 @@
   </style>
 </head>
 <body>
-
+ 
 <!-- MODAL -->
 <div class="modal-overlay" id="detailModal" role="dialog" aria-modal="true">
   <button class="modal-close" id="modalClose">Close</button>
@@ -356,9 +358,9 @@
     <div class="modal-text" id="modalText"></div>
   </div>
 </div>
-
+ 
 <div class="page">
-
+ 
   <!-- NAV -->
   <nav>
     <span class="nav-brand">INF STD 270</span>
@@ -368,23 +370,23 @@
       <a href="#" onclick="switchTab('interview'); return false;">Interview</a>
     </span>
   </nav>
-
+ 
   <!-- TAB BAR -->
   <div class="tab-bar">
     <button class="tab-btn active" onclick="switchTab('main')" id="tab-main">Dossier</button>
     <button class="tab-btn" onclick="switchTab('interview')" id="tab-interview">Interview: Shaula Stephenson</button>
   </div>
-
+ 
   <!-- ══════════════════════════════════════════════
        MAIN DOSSIER TAB
   ══════════════════════════════════════════════ -->
   <div class="tab-panel active" id="panel-main">
-
+ 
     <!-- HERO -->
     <section class="hero">
       <h1>Dossier: Archival &amp; DAMS Management</h1>
     </section>
-
+ 
     <!-- ── SET 01: OVERVIEW ── -->
     <div class="section-label">
       <span>Set 01 — Overview</span>
@@ -408,7 +410,7 @@
         <p class="media-caption">f.1–1 &nbsp; Shaula Stephenson, Managing Archivist.</p>
       </div>
     </div>
-
+ 
     <!-- Skirball sketch — flipped -->
     <div class="split flip">
       <div class="split-text">
@@ -427,7 +429,7 @@
         <p class="media-caption">f.1–2 &nbsp; Moshe Safdie, sketch for Skirball Center. 2013.</p>
       </div>
     </div>
-
+ 
     <!-- ── SET 02: PROFESSIONAL CONTEXT ── -->
     <section class="hero" style="border-top: 1px solid var(--border);">
       <h1>Professional Context</h1>
@@ -451,7 +453,7 @@
         <p class="media-caption">f.2–1 &nbsp; Professional organizations landscape.</p>
       </div>
     </div>
-
+ 
     <!-- ── SET 03: JOB MARKET ── -->
     <section class="hero" style="border-top: 1px solid var(--border);">
       <h1>Job-Market Outlook</h1>
@@ -477,7 +479,7 @@ The job market for archivists remains difficult to determine amid broad economic
         <p class="media-caption">f.3–1 &nbsp; Job market conditions for archivists.</p>
       </div>
     </div>
-
+ 
     <!-- ── SET 04: TECHNICAL SKILLS ── -->
     <section class="hero" style="border-top: 1px solid var(--border);">
       <h1>Technical Skills &amp; Training</h1>
@@ -506,7 +508,7 @@ The job market for archivists remains difficult to determine amid broad economic
         <p class="media-caption">f.4–1 &nbsp; Technical skills overview.</p>
       </div>
     </div>
-
+ 
     <div class="split flip">
       <div class="split-text">
         <div class="eyebrow">Training</div>
@@ -523,7 +525,7 @@ The job market for archivists remains difficult to determine amid broad economic
         <p class="media-caption">f.4–2 &nbsp; Training and continuing education.</p>
       </div>
     </div>
-
+ 
     <!-- ── SET 05: LABOR TRENDS ── -->
     <section class="hero" style="border-top: 1px solid var(--border);">
       <h1>Labor Trends</h1>
@@ -552,7 +554,7 @@ The job market for archivists remains difficult to determine amid broad economic
        <p class="media-caption">f.5–2 &nbsp; DLF Organizer's Toolkit infographic.</p>
       </div>
     </div>
-
+ 
     <div class="split">
       <div class="split-text">
         <div class="eyebrow">Vocational Awe</div>
@@ -570,7 +572,7 @@ As Shaula further illuminated, vocational awe affects interpersonal and inter-in
         <p class="media-caption">f.5–3 &nbsp; Vocational awe and archival labor.</p>
       </div>
     </div>
-
+ 
     <!-- ── SET 06: 5 WAYS ── -->
     <section class="hero" style="border-top: 1px solid var(--border);">
       <h1>5 Ways To Understand The Profession</h1>
@@ -588,8 +590,9 @@ As Shaula further illuminated, vocational awe affects interpersonal and inter-in
         <p>This article is particularly interesting given Shaula’s intended goal of the new DAMS being the achievement of communication between it and the existing Collection Management System (CMS.) One point that was confirmed by our discussion with Shaula is differing definitions for digital preservation among archivists and DAMS professionals. While the integration and value  of DAMS skills has become a much more popular hat among the many that archivists are expected to wear in the ten years since the article was written, the discourse Cocciolo outlines here is ongoing and prescient for anyone interested in entering the field at this time.</p>
         <p><strong>Ettarh, Fobazi.</strong> "Vocational Awe in Librarianship: The Lies We Tell Ourselves." <em>In The Library With The Lead Pipe.</em> 2018.</p>
         <p>Ettarh's seminal text on the concept of ‘vocational awe’ that Shaula brought up in our interview. Not having heard this term before, we found that literature surrounding this problem in the field spoke to something of an unsaid, constant polemic that we navigate in our academic-professional lives. Ettarh defines vocational awe as the precarious state of paralysis that IS workers find their roles, mediated through perceived social and institutional importance. Ettarh focuses on how this valuation and definition of expected role has taken shape over time, leading to popular ideas of the library/archive as a sacred site and its workers as martyrs. However, the context in which Shaula brought up the term was particularly interesting and relevant, as it represented how this supposed valuation of labor as invaluable is oft weaponized against labor organization and how archival labor is ultimately devalued. </p>
-        <p><strong>"Episodes."</strong> <em>Archives in Context.</em> </p> https://archivesincontext.archivists.org/episodes/. <p> </p> This podcast is hosted by The Publications Board, the American Archivist Editorial Board, Committee on Public Awareness of the Society of American Archivists (SAA). Intended to, “Hear personal stories about collections, the many ways that archivists bridge the past and present, unique approaches to current challenges that the profession is facing, and the often moving and important work of memory-keeping.” Here each episode discusses challenges within the archival profession, individual archivists and their work in the field. </p> 
-        <p><strong>Gingris, Jarrod (moderator), Meyer, Kendra, Stephenson, Shaula and Stein, Tammi (panelists.) Panel discussion. </strong> <em>Connecting the Dots: Integrating DAM into the Museum and Cultural Heritage’s Technology Ecosystem,</em> DAM and Museums 2026. 5 February 2026, Henry Stewart DAM Events. Youtube. https://www.youtube.com/watch?v=EkqgFA6oo2I </p> <p> This recent panel with our interviewee Shaula Stephenson and other DAMS managers working in GLAMs offers much insight into current discourse surrounding the ecosystem of digital preservation and management in archives. The Henry Stewart DAM Conference is one of the largest events for the field in the world, and a specific series focus on DAM and cultural heritage institutions shows that there is massive interest in fostering dialogue between the more corporate side of DAMS and that of public-facing institutions like the Skirball, the American Museum of Natural History, and the David Zwirner Gallery. Shaula touches on much of the same content as she did in our interview, but hearing perspectives, problems, and solutions from other GLAM workers offers great insight into the state of the field. </p>
+        <p><strong>"Episodes."</strong> <em>Archives in Context.</em> <a href="https://archivesincontext.archivists.org/episodes/" target="_blank">https://archivesincontext.archivists.org/episodes/</a>. This podcast is hosted by The Publications Board, the American Archivist Editorial Board, Committee on Public Awareness of the Society of American Archivists (SAA). Intended to, “Hear personal stories about collections, the many ways that archivists bridge the past and present, unique approaches to current challenges that the profession is facing, and the often moving and important work of memory-keeping.” Here each episode discusses challenges within the archival profession, individual archivists and their work in the field.</p>
+        <p><strong>Gingris, Jarrod (moderator), Meyer, Kendra, Stephenson, Shaula and Stein, Tammi (panelists.) Panel discussion.</strong> <em>Connecting the Dots: Integrating DAM into the Museum and Cultural Heritage’s Technology Ecosystem,</em> DAM and Museums 2026. 5 February 2026, Henry Stewart DAM Events. Youtube. <a href="https://www.youtube.com/watch?v=EkqgFA6oo2I" target="_blank">https://www.youtube.com/watch?v=EkqgFA6oo2I</a></p>
+        <p>This recent panel with our interviewee Shaula Stephenson and other DAMS managers working in GLAMs offers much insight into current discourse surrounding the ecosystem of digital preservation and management in archives. The Henry Stewart DAM Conference is one of the largest events for the field in the world, and a specific series focus on DAM and cultural heritage institutions shows that there is massive interest in fostering dialogue between the more corporate side of DAMS and that of public-facing institutions like the Skirball, the American Museum of Natural History, and the David Zwirner Gallery. Shaula touches on much of the same content as she did in our interview, but hearing perspectives, problems, and solutions from other GLAM workers offers great insight into the state of the field.</p>
       </div>
       <div class="split-media">
         <img src="images/5Ways.png" alt="5 Ways to understand the archival profession"
@@ -601,7 +604,7 @@ As Shaula further illuminated, vocational awe affects interpersonal and inter-in
         <p class="media-caption">f.6–1 &nbsp; Annotated bibliography overview.</p>
       </div>
     </div>
-
+ 
   </div><!-- /panel-main -->
  <!-- ══════════════════════════════════════════════
        INTERVIEW TAB
